@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title></title>
+    <script src="scritps/angular.js"></script>
+    <script src="scritps/jquery-2.1.0.min.js"></script>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <script src="Scripts/Index.js"></script>
+
+</head>
+<body>
+    <div class="container" ng-controller="AppCtrl">
+        {{name}}
+        <input type="text" data-ng-model="name" value="hello"/>
+        <div data-ng-repeat="Birth in Birthdays">
+            <div ng-include src="RepeatURL"></div>
+        </div><div data-ng-repeat="Birth in Birthdays">
+            <input type="text" data-ng-if="Birth.name==name" />
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var myapp = angular.module('myApp', [])
+        .controller('AppCtrl', function aa($scope) {
+            $scope.Birthdays = [
+                {
+                    name: 'hello',
+                    date: 'today',
+                    username: 'mul\shujaathk',
+                    enabled: 'false'
+                },
+                {
+                    name: 'hello1',
+                    date: 'today1',
+                    username: 'mul\shujaathk1',
+                    enabled: 'false'
+                },
+                 {
+                     name: 'hello2',
+                     date: 'today2',
+                     username: 'mul\shujaathk2',
+                     enabled: 'false'
+                 },
+                  {
+                      name: 'hello3',
+                      date: 'today3',
+                      username: 'mul\shujaath3',
+                      enabled: 'false'
+                  }
+
+            ];
+            $scope.RepeatURL = 'repeater.html';
+            window.scope = $scope;
+        });
+
+    </script>
+</body>
+</html>

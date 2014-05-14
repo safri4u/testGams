@@ -1,0 +1,19 @@
+﻿<table class="table table-striped table-bordered" ng-controller="AppCtrl">
+    <thead>
+        <tr>
+            <td>Name</td>
+            <td>Description</td>
+            <td><i class="glyphicon glyphicon-export"></i></td>
+
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr ng-repeat="person in crew">
+            <td>{{person.name}}</td>
+            <td>{{person.description}}</td>
+            <td><i class="glyphicon glyphicon-edit"></i></td>
+
+        </tr>
+    </tbody>
+</table>
