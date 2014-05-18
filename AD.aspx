@@ -3,6 +3,8 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
+<link href="Content/bootstrap.css" rel="stylesheet" />
+<link href="Content/bootstrap-theme.css" rel="stylesheet" />
 <head runat="server">
     <title></title>
     <script src="Scripts/jquery-1.9.0.js"></script>

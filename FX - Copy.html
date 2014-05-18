@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title></title>
+   
+        <script src="Scripts/angular.js"></script>
+        <script src="Scripts/angular-animate.js"></script>
+        <link href="Content/bootstrap.css" rel="stylesheet" />
+   
+  
+        <style type="text/css">
+
+            .animate-enter,
+            .animate-leave {
+                -moz-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+                -ms-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+                -o-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+                -webkit-transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+                display: block;
+                overflow: hidden;
+                position: relative;
+                text-overflow: clip;
+                transition: 400ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+                white-space: nowrap;
+            }
+
+            .animate-leave.animate-leave-active,
+            .animate-enter {
+                height: 0px;
+                opacity: 0;
+                width: 0px;
+            }
+
+            .animate-enter.animate-enter-active,
+            .animate-leave {
+                height: 30px;
+                opacity: 1;
+                width: 150px;
+            }
+        </style>
+    
+    </head>
+    <body data-ng-app="foodApp">
+        <div data-ng-controller="FoodController">
+            <input type="text" data-ng-model="Cxxx" />
+            <input type="button" data-ng-click="pushy()"></input>
+            <ul ng-repeat="food in foods" ng-animate="'animate'">
+                <li>
+                    {{ food }}
+                </li>
+            </ul>
+        </div>
+        <script>
+
+            angular.module('foodApp', ['ngAnimate'])
+                .controller('FoodController', function($scope, $timeout) {
+                    $scope.foods = ['apple', 'muffin', 'chips'];
+                    $scope.pushy = function() {
+                        var vv = $scope.Cxxx;
+                        $scope.foods.push(vv);
+                    };
+                });
+
+        </script>
+   
+    </body>
+
+</html>

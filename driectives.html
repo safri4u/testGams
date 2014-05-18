@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/angular-animate.js"></script>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+
+
+
+
+</head>
+<body data-ng-app="Mydirective">
+    <div data-first="Shujaath" data-last="Khan" data-my-name> </div>
+    <div data-first="Shujaath1" data-last="Khan" my-name> </div><div data-first="Shujaath2" data-last="Khan" my-name> </div>
+    <script>
+        var MyApp = angular.module('Mydirective', []);
+        MyApp.directive('myName', function () {
+            return {
+                scope: true,
+                restrict: 'A',
+                link: function (scope, e, a) {
+                    scope.Fullname = a.first + '' + a.last;
+                },
+                replace: true,
+                template: "<h1>{{Fullname}}</h1>"
+            };
+        });
+    </script>
+
+</body>
+
+</html>
